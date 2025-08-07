@@ -1,11 +1,13 @@
-import { Navbar } from 'components/Navbar/Navbar';
+import { Route, Routes } from 'react-router';
 import { MainPage } from 'pages/MainPage/MainPage';
+import { Layout } from 'components/Navbar/Layout';
 
 export const App = () => {
   return (
-    <div>
-      <Navbar />
-      <MainPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<MainPage />} />
+      </Route>
+    </Routes>
   );
 };
