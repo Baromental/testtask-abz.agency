@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/testtask-abz.agency/static/css/main.b5320759.css",
+    "main.js": "/testtask-abz.agency/static/js/main.c0396036.js",
+    "static/media/Logo.svg": "/testtask-abz.agency/static/media/Logo.8bb55362d01d55393ccc5476d96f0c14.svg",
+    "index.html": "/testtask-abz.agency/index.html",
+    "main.b5320759.css.map": "/testtask-abz.agency/static/css/main.b5320759.css.map",
+    "main.c0396036.js.map": "/testtask-abz.agency/static/js/main.c0396036.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.c0396036.js"
+  ]
+}
