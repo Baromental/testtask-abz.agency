@@ -2,16 +2,18 @@ import React from 'react';
 import { ReactComponent as LogoIcon } from '../../images/Logo.svg';
 import { Link } from 'react-router';
 
+import s from './Navbar.module.css';
+
 export const Navbar = () => {
   return (
-    <header>
+    <header className={s.headerContainer}>
       <Link to="/">
         <LogoIcon />
       </Link>
 
-      <div>
-        <button>Users</button>
-        <button>Sign up</button>
+      <div className={s.buttonContainer}>
+        <button className={s.button}>Users</button>
+        <button className={s.button}>Sign up</button>
       </div>
     </header>
   );

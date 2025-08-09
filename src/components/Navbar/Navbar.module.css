@@ -1,0 +1,43 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0;
+}
+
+@media (max-width: 767px) {
+  .headerContainer {
+    padding: 17px 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .headerContainer {
+    padding: 17px 32px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1169px) {
+  .headerContainer {
+    padding: 17px 60px;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  padding: 4px 23px;
+  width: 100px;
+  max-height: 34px;
+  border: transparent;
+  border-radius: 80px;
+  background-color: #f4e041;
+  white-space: nowrap;
+}
