@@ -1,0 +1,54 @@
+/* Title styles */
+.titleContainer {
+  background-image: rgba(0, 0, 0, 0.5)
+    url('../../images/pexels-alexandr-podvalny-1227513.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 164px 395px;
+}
+
+.titleContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Title styles */
+.title {
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Paragraph styles */
+.paragraph {
+  margin-top: 21px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Button styles */
+.button {
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  padding: 4px 23px;
+  width: 100px;
+  max-height: 34px;
+  border: transparent;
+  border-radius: 80px;
+  background-color: #f4e041;
+  white-space: nowrap;
+  cursor: pointer;
+}
