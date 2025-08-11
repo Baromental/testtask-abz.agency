@@ -16,6 +16,67 @@
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* Card container styles */
+.list {
+  margin-top: 50px;
+  display: flex;
+  gap: 29px;
+  row-gap: 29px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .list {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .list {
+    gap: 16px;
+    row-gap: 16px;
+  }
+}
+
+.userCard {
+  background-color: #ffffff;
+  border-radius: 4px;
+  width: 370px;
+}
+
+@media (max-width: 767px) {
+  .userCard {
+    width: 328px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .userCard {
+    width: 344px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1169px) {
+  .userCard {
+    width: 282px;
+  }
+}
+
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.name {
+}
+.position {
+}
+.email {
+}
+.phone {
+}
+
 /* Button styles */
 .button {
   margin-top: 32px;
