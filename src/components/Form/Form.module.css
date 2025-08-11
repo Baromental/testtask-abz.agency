@@ -1,11 +1,6 @@
 .form {
   width: 380px;
 }
-@media (max-width: 767px) {
-  .form {
-    width: 328px;
-  }
-}
 /* Input container styles  */
 .inputTextContainer {
   display: flex;
@@ -114,14 +109,19 @@ input[type='radio']:checked::before {
 
 /* Upload button styles */
 .uploadContainer {
+  width: 380px;
   margin-top: 47px;
   display: flex;
   align-items: center;
-  width: 100%;
   border: 1px solid rgba(208, 207, 207, 1);
   border-radius: 4px;
   position: relative;
   background: transparent;
+}
+@media (max-width: 767px) {
+  .uploadContainer {
+    width: 328px;
+  }
 }
 
 .uploadButton {
