@@ -10,7 +10,6 @@ export const GetComponent = () => {
   const dispatch = useDispatch();
 
   const users = useSelector(selectUsers);
-  console.log(users);
 
   useEffect(() => {
     dispatch(fetchUsers({ page: 1, count: 6 }));

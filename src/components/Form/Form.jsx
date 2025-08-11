@@ -1,72 +1,101 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPositions, registerUser } from '../../redux/user/operations';
+import { ReactComponent as SuccessIcon } from '../../images/success-image.svg';
 import s from './Form.module.css';
 
 export const Form = () => {
+  const dispatch = useDispatch();
+  const { items: positions, loading: positionsLoading } = useSelector(
+    state => state.users.positions
+  );
+  const registerState = useSelector(state => state.users.register);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      position_id: '',
+      photoFile: null,
+    },
+  });
+
+  useEffect(() => {
+    dispatch(fetchPositions());
+  }, [dispatch]);
+
+  const onSubmit = data => {
+    dispatch(
+      registerUser({
+        ...data,
+        photoFile: data.photoFile[0],
+      })
+    );
+  };
+
+  if (registerState.success) {
+    return (
+      <div className={s.successContainer}>
+        <SuccessIcon className={s.successIcon} />
+      </div>
+    );
+  }
+
   return (
     <div>
-      <form className={s.form} action="">
+      <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={s.inputTextContainer}>
           <div className={s.inputContainer}>
-            <input className={s.input} type="text" placeholder="Your name" />
-            <input className={s.input} type="text" placeholder="Email" />
-            <input className={s.input} type="text" placeholder="Phone" />
+            <input
+              className={s.input}
+              type="text"
+              placeholder="Your name"
+              {...register('name', { required: true })}
+            />
+            <input
+              className={s.input}
+              type="email"
+              placeholder="Email"
+              {...register('email', { required: true })}
+            />
+            <input
+              className={s.input}
+              type="tel"
+              placeholder="Phone"
+              {...register('phone', { required: true })}
+            />
           </div>
           <p className={s.labelPhone}>+38 (XXX) XXX - XX - XX</p>
         </div>
+
         <fieldset className={s.fieldset} aria-labelledby="position-label">
           <p id="position-label" className={s.label}>
             Select your position
           </p>
-          <div className={s.radioContainer}>
-            <input
-              className={s.radioButton}
-              type="radio"
-              id="frontend"
-              name="position"
-              value="frontend"
-            />
-            <label className={s.label} htmlFor="frontend">
-              Frontend developer
-            </label>
-          </div>
-          <div className={s.radioContainer}>
-            <input
-              className={s.radioButton}
-              type="radio"
-              id="backend"
-              name="position"
-              value="backend"
-            />
-            <label className={s.label} htmlFor="backend">
-              Backend developer
-            </label>
-          </div>
-          <div className={s.radioContainer}>
-            <input
-              className={s.radioButton}
-              type="radio"
-              id="designer"
-              name="position"
-              value="designer"
-            />
-            <label className={s.label} htmlFor="designer">
-              Designer
-            </label>
-          </div>
-          <div className={s.radioContainer}>
-            <input
-              className={s.radioButton}
-              type="radio"
-              id="qa"
-              name="position"
-              value="qa"
-            />
-            <label className={s.label} htmlFor="qa">
-              QA
-            </label>
-          </div>
+          {positionsLoading && <p>Loading positions...</p>}
+          {positions.map(pos => (
+            <div key={pos.id} className={s.radioContainer}>
+              <input
+                className={s.radioButton}
+                type="radio"
+                id={`pos-${pos.id}`}
+                value={pos.id}
+                {...register('position_id', { required: true })}
+              />
+              <label className={s.label} htmlFor={`pos-${pos.id}`}>
+                {pos.name}
+              </label>
+            </div>
+          ))}
         </fieldset>
+
         <div className={s.uploadContainer}>
           <label htmlFor="photo" className={s.uploadButton}>
             Upload
@@ -74,13 +103,20 @@ export const Form = () => {
           <input
             type="file"
             id="photo"
-            name="photo"
             accept="image/*"
+            {...register('photoFile')}
             className={s.fileInput}
           />
           <span className={s.uploadText}>Upload your photo</span>
         </div>
-        <button className={s.button}>Sign up</button>
+
+        <button
+          type="submit"
+          className={s.button}
+          disabled={!isValid || registerState.loading}
+        >
+          {registerState.loading ? 'Submitting...' : 'Sign up'}
+        </button>
       </form>
     </div>
   );

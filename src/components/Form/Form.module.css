@@ -176,3 +176,12 @@ input[type='radio']:checked::before {
   white-space: nowrap;
   cursor: pointer;
 }
+
+.button:disabled {
+  background-color: rgba(180, 180, 180, 1);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.successContainer {
+  margin-top: 50px;
+}
