@@ -1,0 +1,33 @@
+/* Get container styles */
+.getContainer {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title styles */
+.title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+
+/* Button styles */
+.button {
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  padding: 4px 19px;
+  width: 120px;
+  max-height: 34px;
+  border: transparent;
+  border-radius: 80px;
+  background-color: #f4e041;
+  white-space: nowrap;
+  cursor: pointer;
+}
