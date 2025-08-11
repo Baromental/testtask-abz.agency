@@ -1,32 +1,13 @@
 import React from 'react';
+import { Form } from 'components/Form/Form';
+
+import s from './PostComponent.module.css';
 
 export const PostComponent = () => {
   return (
-    <div>
-      <h2>Working with POST request</h2>
-      <form action="">
-        <div>
-          <input type="text" placeholder="" />
-          <input type="text" placeholder="" />
-          <input type="text" placeholder="" />
-        </div>
-        <fieldset>
-          <legend>Select your position</legend>
-
-          <input type="radio" id="frontend" name="position" value="frontend" />
-          <label htmlFor="frontend">Frontend developer</label>
-
-          <input type="radio" id="backend" name="position" value="backend" />
-          <label htmlFor="backend">Backend developer</label>
-
-          <input type="radio" id="designer" name="position" value="designer" />
-          <label htmlFor="designer">Designer</label>
-
-          <input type="radio" id="qa" name="position" value="qa" />
-          <label htmlFor="qa">QA</label>
-        </fieldset>
-        <button>Sign up</button>
-      </form>
+    <div className={s.postContainer}>
+      <h2 className={s.title}>Working with POST request</h2>
+      <Form />
     </div>
   );
 };

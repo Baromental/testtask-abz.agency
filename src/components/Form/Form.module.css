@@ -1,0 +1,178 @@
+.form {
+  width: 380px;
+}
+@media (max-width: 767px) {
+  .form {
+    width: 328px;
+  }
+}
+/* Input container styles  */
+.inputTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+/* Input  styles  */
+.input {
+  border: 1px solid rgba(208, 207, 207, 1);
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  padding: 14px 16px;
+  width: 380px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(126, 126, 126, 1);
+}
+
+@media (max-width: 767px) {
+  .input {
+    width: 328px;
+  }
+}
+
+/* Label phone styles */
+.labelPhone {
+  margin-top: 4px;
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  color: rgba(126, 126, 126, 1);
+}
+
+/* Fieldset styles */
+.fieldset {
+  margin-top: 25px;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Label styles */
+.legend {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Radio button container styles */
+.radioContainer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Radio button styles */
+input[type='radio'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 189, 211, 1);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+input[type='radio']:checked {
+  border-color: rgba(0, 189, 211, 1);
+  background-color: #f8f8f8;
+}
+
+input[type='radio']:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 189, 211, 1);
+  border-radius: 50%;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
+
+/* Upload button styles */
+.uploadContainer {
+  margin-top: 47px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgba(208, 207, 207, 1);
+  border-radius: 4px;
+  position: relative;
+  background: transparent;
+}
+
+.uploadButton {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  margin-left: -1px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadText {
+  flex: 1;
+  padding: 14px 15px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
+
+/* Button styles */
+.button {
+  margin-top: 50px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  padding: 4px 23px;
+  width: 100px;
+  max-height: 34px;
+  border: transparent;
+  border-radius: 80px;
+  background-color: #f4e041;
+  white-space: nowrap;
+  cursor: pointer;
+}
