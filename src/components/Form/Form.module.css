@@ -77,7 +77,7 @@ input[type='radio'] {
   appearance: none;
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(0, 189, 211, 1);
+  border: 2px solid rgba(208, 207, 207, 1);
   border-radius: 50%;
   position: relative;
   cursor: pointer;
