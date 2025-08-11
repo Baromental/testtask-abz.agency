@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPositions, registerUser } from '../../redux/user/operations';
 import { ReactComponent as SuccessIcon } from '../../images/success-image.svg';
 import s from './Form.module.css';
+import { ClipLoader } from 'react-spinners';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -104,7 +105,7 @@ export const Form = () => {
             type="file"
             id="photo"
             accept="image/*"
-            {...register('photoFile')}
+            {...register('photoFile', { required: 'Photo is required' })}
             className={s.fileInput}
           />
           <span className={s.uploadText}>Upload your photo</span>
@@ -115,7 +116,11 @@ export const Form = () => {
           className={s.button}
           disabled={!isValid || registerState.loading}
         >
-          {registerState.loading ? 'Submitting...' : 'Sign up'}
+          {registerState.loading ? (
+            <ClipLoader size={100} color="rgba(0, 189, 211, 1)" />
+          ) : (
+            'Sign up'
+          )}
         </button>
       </form>
     </div>

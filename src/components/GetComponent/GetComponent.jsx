@@ -5,6 +5,7 @@ import { fetchUsers } from '../../redux/user/operations';
 
 import s from './GetComponent.module.css';
 import { UserCard } from './UserCard';
+import { ClipLoader } from 'react-spinners';
 
 export const GetComponent = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,10 @@ export const GetComponent = () => {
     <div className={s.getContainer}>
       <h2 className={s.title}>Working with GET request</h2>
       <ul className={s.list}>
+        {users.loading && (
+          <ClipLoader size={100} color="rgba(0, 189, 211, 1)" />
+        )}
+
         {users.items.map(user => (
           <UserCard user={user} key={user.id} />
         ))}
